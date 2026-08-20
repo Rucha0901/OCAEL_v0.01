@@ -1,0 +1,225 @@
+{
+  "backend_only": true,
+  "compileall": "passed",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "20c1c5dedc86089c28da60c949208ee2bd77c8956d72391beca68010820e3354",
+      "size_bytes": 90
+    },
+    {
+      "path": "BACKEND_API_CONTRACT.md",
+      "sha256": "833e6a0d610b7cdc33010445f4039dc0ac3df725388ee93480971f3ab823d890",
+      "size_bytes": 5364
+    },
+    {
+      "path": "BACKEND_FINAL_AUDIT.md",
+      "sha256": "707b5f192167276132ba11e4e3abe3eafd99e74d124eadafef67d0ffa33854f0",
+      "size_bytes": 9122
+    },
+    {
+      "path": "README.md",
+      "sha256": "ea22204722d6df220500f967f831b4e669f23af24ddc2fbd687ba7bd71762fc1",
+      "size_bytes": 11889
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b9e62b05e02fc039e455e81bec3e4a2dfe64c79c78cc711bfbbc2012a1a2d760",
+      "size_bytes": 824
+    },
+    {
+      "path": "src/adaptive_backend/__init__.py",
+      "sha256": "c97c495df060451eaa1867b2d280bb3c763de62be2273ed9f7ea795e3f1851ff",
+      "size_bytes": 61
+    },
+    {
+      "path": "src/adaptive_backend/adaptive.py",
+      "sha256": "93f34bf0cbc5129cbb84e2702a230ff0b71376ca818c8049dfa96ae70e72c9ca",
+      "size_bytes": 26617
+    },
+    {
+      "path": "src/adaptive_backend/agents.py",
+      "sha256": "b1a2413cea0bfe1c29d77250ac455fdaf8707e13daad013ca7874d9cbaa918a0",
+      "size_bytes": 39121
+    },
+    {
+      "path": "src/adaptive_backend/api_v1.py",
+      "sha256": "1c9628005e55218017f20fd62cca26b690cd5c8804bd6bb796dc7a327b443860",
+      "size_bytes": 30975
+    },
+    {
+      "path": "src/adaptive_backend/app.py",
+      "sha256": "740f952e96593b34678cff3e11b3f9dab1b79027afb9828e67be12c6f77745f7",
+      "size_bytes": 22817
+    },
+    {
+      "path": "src/adaptive_backend/auth.py",
+      "sha256": "923b2b2dda37950d0eafc34a29374ff4721778d4aa9ffc1fefbcce4a1ebe266f",
+      "size_bytes": 23427
+    },
+    {
+      "path": "src/adaptive_backend/config.py",
+      "sha256": "d1c88817f72ac644f1bad1ce831bc120686a46dd5bde13c84407f326bc31c3df",
+      "size_bytes": 8741
+    },
+    {
+      "path": "src/adaptive_backend/database.py",
+      "sha256": "9a6ac28c641a1b53c375d14dbf9d5cb2aa82ed5e7a7b03f96536e189dbe1d6f7",
+      "size_bytes": 22533
+    },
+    {
+      "path": "src/adaptive_backend/documents.py",
+      "sha256": "b640f468644e607878529974b259e17d5169245c2735182a94a91f37d5593016",
+      "size_bytes": 15324
+    },
+    {
+      "path": "src/adaptive_backend/evaluation.py",
+      "sha256": "619e58857c8296ee34c75cc1398e88bd9102d082e1e2107ee20fb416955a0aaf",
+      "size_bytes": 3236
+    },
+    {
+      "path": "src/adaptive_backend/jobs.py",
+      "sha256": "7d2f4204417f4fcb6ffa3c39ed7c3e921d9c710180edccced45c2382cd36b602",
+      "size_bytes": 5249
+    },
+    {
+      "path": "src/adaptive_backend/learning.py",
+      "sha256": "7fb0a73fbeaff8a9b95a74cb6f71e209780fd97be26a901d7523688f3c0afa6b",
+      "size_bytes": 34365
+    },
+    {
+      "path": "src/adaptive_backend/mcp_protocol.py",
+      "sha256": "e3deac8a9175ff0f93bdb9a8882d1751d958c655c64c7f980ae73e9a03178911",
+      "size_bytes": 5837
+    },
+    {
+      "path": "src/adaptive_backend/mcp_server.py",
+      "sha256": "e56532f65b294f4847e8f21a6e3856c6faec94698a85c098dd2aad212abc102f",
+      "size_bytes": 25692
+    },
+    {
+      "path": "src/adaptive_backend/memory.py",
+      "sha256": "24c941727bc447e537af12329c480caa26ba281d5a11c3da767a0f59d74cd5f9",
+      "size_bytes": 37156
+    },
+    {
+      "path": "src/adaptive_backend/models.py",
+      "sha256": "39d72f8161455385b34f9576d73e01efc5f5b830e2e544ad028f6ff06812a6ae",
+      "size_bytes": 11525
+    },
+    {
+      "path": "src/adaptive_backend/ocr.py",
+      "sha256": "2432aad99b9e5a48e4f77add7f75abc1ab15e2339fd4eb2167fe6811c84687a7",
+      "size_bytes": 1966
+    },
+    {
+      "path": "src/adaptive_backend/retrieval.py",
+      "sha256": "fc9b4336aad9e546dcda0b49d43903fbc444fa4f2b2c6fff61890cc6c800fcaf",
+      "size_bytes": 13342
+    },
+    {
+      "path": "src/adaptive_backend/schemas.py",
+      "sha256": "eddd1860f2d4a7fdab289aa8e2a5337490de177b9eda4b4228b8ae4dc55664bb",
+      "size_bytes": 14519
+    },
+    {
+      "path": "src/adaptive_backend/speech.py",
+      "sha256": "ebb5a19c8f939236a53f911eba981e92a79cee11164a674d324df4ad9c082792",
+      "size_bytes": 5154
+    },
+    {
+      "path": "src/adaptive_backend/storage.py",
+      "sha256": "3b77d4b266a1bf2e1b7aaa050c9bcae4e573c09afbea347e7392d5eed38fb84e",
+      "size_bytes": 2360
+    },
+    {
+      "path": "src/adaptive_backend/subjects/__init__.py",
+      "sha256": "fb10b5553bf06b41784606a9d9fbffbd7502966b7a6ffe7e97dedb17fe46acc7",
+      "size_bytes": 627
+    },
+    {
+      "path": "src/adaptive_backend/subjects/biology.py",
+      "sha256": "6112d139aeadec5933249f9e294a9d5291b6fe966b1c4eb4eaf54a46290b8e95",
+      "size_bytes": 18609
+    },
+    {
+      "path": "src/adaptive_backend/subjects/builtin_catalog.py",
+      "sha256": "6211e57231cacc01b7318cb94dbae544d2d87a9e895a28443fcf4c3526ca46b4",
+      "size_bytes": 4475
+    },
+    {
+      "path": "src/adaptive_backend/subjects/dsa.py",
+      "sha256": "3040ae9dc40f25644778b33497a55ddaf5317eef3a2d802229e952b5a87243f2",
+      "size_bytes": 26915
+    },
+    {
+      "path": "src/adaptive_backend/subjects/registry.py",
+      "sha256": "4945cf1c99440d03b88671e0b17e0ee6074d3ae5962cee419e2116bb3482a377",
+      "size_bytes": 9616
+    },
+    {
+      "path": "src/adaptive_backend/teaching.py",
+      "sha256": "041cc70e05bc608fa696d442ffb3bbd61f6c6215cb03474b43cbc481be9bb94c",
+      "size_bytes": 58690
+    },
+    {
+      "path": "src/adaptive_backend/training.py",
+      "sha256": "1cf6a7cee13edb63bac5b88ffc5c3bbba7b8c51d3592c2a09ecd4327492e7033",
+      "size_bytes": 7973
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "e1be3fbfd245659cc5bb3e109cacd80cdb6982cdaa7314970b31d319f50e61d9",
+      "size_bytes": 1547
+    },
+    {
+      "path": "tests/test_adaptive.py",
+      "sha256": "691f392468bf30fa288dbf2ed0854339d21a4dcbee271eb8a2eb62b35c835460",
+      "size_bytes": 4590
+    },
+    {
+      "path": "tests/test_api.py",
+      "sha256": "038f6db8c71554dd67a355e2228f4de1f6c5eb5f620be5805346bb1ddf4e19b3",
+      "size_bytes": 3118
+    },
+    {
+      "path": "tests/test_audit_regressions.py",
+      "sha256": "49ff34ee0f73e6c2119737d1ee46af03ac1c0a719a154e2605fbab8274af8ef5",
+      "size_bytes": 26142
+    },
+    {
+      "path": "tests/test_code_theory.py",
+      "sha256": "b5e45797290e8f070cbcdc4329682b2618161a8bac8cd5af5b20b8ed714a0d70",
+      "size_bytes": 2457
+    },
+    {
+      "path": "tests/test_hidden_architecture.py",
+      "sha256": "8f43e37ce9525cc85cb7d92531efe0e81b54b7ab77ab28d14379ec3c607e9672",
+      "size_bytes": 10131
+    },
+    {
+      "path": "tests/test_learning.py",
+      "sha256": "23a22a319896d61f8122ec26b1a7ad8c0d69006fc54a90eddfec2b612eeec136",
+      "size_bytes": 3633
+    },
+    {
+      "path": "tests/test_memory_retrieval.py",
+      "sha256": "c4742d57554e1e8860001953f54de3224e6c6d97714a56eb4a40128ba7926f82",
+      "size_bytes": 2428
+    },
+    {
+      "path": "tests/test_ovael_v001.py",
+      "sha256": "b6f9ebaecea21837b58c0915082894f1301e3ae29fc235bfc8156523f669a109",
+      "size_bytes": 12978
+    }
+  ],
+  "frontend_included": false,
+  "health_smoke": "passed",
+  "package_version": "0.01.0",
+  "product": "OVAEL",
+  "release": "v0.01",
+  "test_result": {
+    "failed": 0,
+    "passed": 63
+  }
+}

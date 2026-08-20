@@ -1,0 +1,48 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# App/runtime data
+data/
+artifacts/
+*.db
+*.db-shm
+*.db-wal
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and coverage output
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checkers and caches
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# Logs
+*.log
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
