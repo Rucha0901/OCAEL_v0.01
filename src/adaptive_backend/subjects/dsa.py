@@ -363,12 +363,16 @@ class CodeReviewService:
         # require the external sandbox path.
         if resource is None:
             return
-        resource.setrlimit(resource.RLIMIT_CPU, (2, 2))
-        resource.setrlimit(resource.RLIMIT_AS, (256 * 1024 * 1024, 256 * 1024 * 1024))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (2 * 1024 * 1024, 2 * 1024 * 1024))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (32, 32))
-        if hasattr(resource, "RLIMIT_NPROC"):
-            resource.setrlimit(resource.RLIMIT_NPROC, (16, 16))
+        try:
+            resource.setrlimit(resource.RLIMIT_CPU, (2, 2))
+            resource.setrlimit(resource.RLIMIT_AS, (256 * 1024 * 1024, 256 * 1024 * 1024))
+            resource.setrlimit(resource.RLIMIT_FSIZE, (2 * 1024 * 1024, 2 * 1024 * 1024))
+            resource.setrlimit(resource.RLIMIT_NOFILE, (32, 32))
+            if hasattr(resource, "RLIMIT_NPROC"):
+                resource.setrlimit(resource.RLIMIT_NPROC, (16, 16))
+        except ValueError as exc:
+            import sys
+            print(f"Warning: OS rejected strict resource limits in code sandbox ({exc}). Proceeding without them.", file=sys.stderr)
 
     @staticmethod
     def _harness(code: str, entry: str, cases: list[dict[str, Any]]) -> str:
