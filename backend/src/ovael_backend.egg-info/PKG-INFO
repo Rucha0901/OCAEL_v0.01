@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: ovael-backend
+Version: 1.0.0
+Summary: OVAEL adaptive teaching companion, gap detection, grounded knowledge, memory and MCP backend
+Requires-Python: >=3.11
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: uvicorn<1,>=0.30
+Requires-Dist: pydantic<3,>=2.8
+Requires-Dist: httpx<1,>=0.27
+Requires-Dist: python-multipart<1,>=0.0.9
+Requires-Dist: Pillow<13,>=10
+Requires-Dist: argon2-cffi<26,>=23
+Requires-Dist: PyJWT<3,>=2.8
+Requires-Dist: pypdf<7,>=5
+Requires-Dist: python-docx<2,>=1.1
+Requires-Dist: python-pptx<2,>=1.0
+Requires-Dist: mcp<3,>=2
+Provides-Extra: ocr
+Requires-Dist: pytesseract<1,>=0.3.13; extra == "ocr"
+Provides-Extra: local-model
+Requires-Dist: torch>=2.4; extra == "local-model"
+Requires-Dist: transformers>=4.50; extra == "local-model"
+Provides-Extra: test
+Requires-Dist: pytest<10,>=8; extra == "test"
