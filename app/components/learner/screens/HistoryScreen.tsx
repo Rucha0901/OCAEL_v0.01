@@ -1,0 +1,14 @@
+"use client";
+
+import { ArrowRight, CheckCircle2, Clock3, RefreshCw } from "lucide-react";
+import { useOvael } from "../../../context/OvaelContext";
+
+function formatDate(value?: string) { if (!value) return "Recent"; return new Intl.DateTimeFormat(undefined, { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }).format(new Date(value)); }
+
+export function HistoryScreen() {
+  const { sessions, map, localState, refresh } = useOvael();
+  const recovered = map.nodes.filter((node) => node.status === "recovered").length;
+  const blockers = map.nodes.filter((node) => node.status === "active_blocker" || node.status === "needs_review").length;
+  const completed = sessions.filter((session) => session.status === "completed").length;
+  return <div className="page"><header className="page-heading"><p className="eyebrow blue">History & progress</p><h1>Progress you can trace.</h1><p>Sessions and graph changes come directly from the learning API—without invented streaks or vanity scores.</p></header><section className="progress-summary"><div><CheckCircle2 size={19} /><span>Recovered concepts</span><strong>{recovered}</strong><small>Backend learner state</small></div><div><ArrowRight size={19} /><span>Completed sessions</span><strong>{completed}</strong><small>{sessions.length} total recorded</small></div><div><RefreshCw size={19} /><span>Current blockers</span><strong>{blockers}</strong><small>Need a different teaching move</small></div><div><Clock3 size={19} /><span>Local handoffs</span><strong>{localState.length}</strong><small>State deltas saved in this tab</small></div></section><div className="history-layout"><section><div className="section-heading"><div><p className="eyebrow">Learning record</p><h2>Recent sessions</h2></div><button className="text-button" onClick={() => void refresh()}><RefreshCw size={15} /> Refresh</button></div><div className="timeline">{sessions.map((session) => <article key={session.teaching_session_id}><time>{formatDate(session.updated_at)}</time><span className={`timeline-dot ${session.status}`} /><div><div><h3>{map.nodes.find((node) => node.id === session.concept_id)?.label || session.concept_id}</h3><span>{session.status}</span></div><p>{session.goal || `${session.mode} session`} · {session.turn_count ?? 0} teaching turns · {session.source_client}</p></div></article>)}{sessions.length === 0 && <div className="empty-state">Your completed and active teaching sessions will appear here.</div>}</div></section><aside className="challenge-panel"><p className="eyebrow">Evidence, not gamification</p><h2>Why there is no fake score</h2><p>OVAEL keeps mastery, gap, and difficulty decisions in the backend learner model. This view reports observable sessions and projected states instead of recomputing a “progress percentage.”</p><p><Clock3 size={15} /> Start, respond, and complete a lesson to verify the history lifecycle.</p></aside></div></div>;
+}
