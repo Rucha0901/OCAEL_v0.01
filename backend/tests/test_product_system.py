@@ -337,7 +337,12 @@ def test_account_delete_cascades_new_v002_user_tables(settings):
 
 def test_internal_chaos_telemetry_and_dpo_routes_are_absent(settings):
     app = create_app(settings)
-    paths = {route.path for route in app.routes}
+    paths = set()
+    for route in app.routes:
+        if hasattr(route, "path"):
+            paths.add(route.path)
+        elif hasattr(route, "routes"):
+            paths.update(r.path for r in route.routes if hasattr(r, "path"))
     forbidden = {
         "/v1/chaos/inject",
         "/v1/chaos/status",

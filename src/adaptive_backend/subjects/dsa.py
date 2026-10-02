@@ -370,7 +370,7 @@ class CodeReviewService:
             resource.setrlimit(resource.RLIMIT_NOFILE, (32, 32))
             if hasattr(resource, "RLIMIT_NPROC"):
                 resource.setrlimit(resource.RLIMIT_NPROC, (16, 16))
-        except ValueError as exc:
+        except (ValueError, OSError) as exc:
             import sys
             print(f"Warning: OS rejected strict resource limits in code sandbox ({exc}). Proceeding without them.", file=sys.stderr)
 

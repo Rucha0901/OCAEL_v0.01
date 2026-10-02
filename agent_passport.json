@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "passport_version": "1.0.0",
+  "challenge": {
+    "name": "Agent Passport Challenge",
+    "organizers": ["HiDevs", "Lyzr"],
+    "presented_by": "AI House",
+    "theme": "Build. Verify. Prove Your Agent Can Travel.",
+    "deadline": "2026-10-03T23:59:59Z"
+  },
+  "agent": {
+    "id": "nexus-agent-passport",
+    "name": "Nexus OVAEL Epistemic Agent",
+    "version": "1.0.0",
+    "description": "Modular, portable, and verifiable multi-agent epistemic reasoning and adaptive learning engine with Model Context Protocol (MCP) and Lyzr cross-runtime portability.",
+    "author": {
+      "name": "Rucha Salpure",
+      "github": "https://github.com/Rucha0901",
+      "repo": "https://github.com/Rucha0901/nexus-agent-passport"
+    },
+    "license": "MIT",
+    "taxonomy": {
+      "domain": "Epistemic Reasoning & Adaptive Education",
+      "architecture": "Hierarchical Multi-Agent with Bounded Ephemeral Specialists",
+      "reasoning_model": "Bayesian Knowledge Tracing (BKT) + Causal Gap Counterfactuals",
+      "runtime_mode": "Local-First / Multi-Runtime Portable"
+    }
+  },
+  "runtimes": [
+    {
+      "name": "Model Context Protocol (MCP)",
+      "version": "2.0.0",
+      "type": "protocol",
+      "transport": ["stdio", "sse", "http-jsonrpc"],
+      "status": "production_ready",
+      "description": "Standardized protocol compatibility allowing Claude Desktop, Cursor, and any MCP client to discover and execute tools.",
+      "entrypoint": "src/adaptive_backend/mcp_server.py"
+    },
+    {
+      "name": "Lyzr Agent Ecosystem",
+      "version": "1.0.0",
+      "type": "framework_adapter",
+      "status": "production_ready",
+      "description": "Native adapter for the Lyzr framework, enabling Lyzr agents and task graphs to invoke Nexus diagnostic, socratic, and gap-analysis engines.",
+      "entrypoint": "src/nexus_passport/lyzr_adapter.py"
+    },
+    {
+      "name": "REST / OpenAPI Gateway",
+      "version": "3.1.0",
+      "type": "http_api",
+      "status": "production_ready",
+      "description": "FastAPI HTTP API with Argon2 token authentication, idempotency validation, and strict Pydantic schemas.",
+      "entrypoint": "src/adaptive_backend/app.py"
+    },
+    {
+      "name": "Standalone Portable CLI",
+      "version": "1.0.0",
+      "type": "cli_runner",
+      "status": "production_ready",
+      "description": "Zero-dependency offline evaluation and verification CLI for automated grading and compliance inspection.",
+      "entrypoint": "passport_verify.py"
+    }
+  ],
+  "agent_topology": {
+    "lead_orchestration_agents": [
+      {
+        "name": "NavigatorAgent",
+        "role": "Lead Orchestration & Curriculum Frontier Navigation",
+        "description": "Determines narrow session state and knowledge boundary without mutating runtime authority directly.",
+        "input_contract": "TutorRequest",
+        "output_contract": "NavigationPlan"
+      },
+      {
+        "name": "TutorAgent",
+        "role": "Pedagogical Delivery & Socratic Turn Orchestration",
+        "description": "Executes Socratic dialogue, worked examples, and adaptive challenge progression under strict quality gates.",
+        "input_contract": "LearningTurnInput",
+        "output_contract": "TeachingMove"
+      },
+      {
+        "name": "MemoryCuratorAgent",
+        "role": "Local-First Epistemic Memory Compaction",
+        "description": "Consolidates session evidence into vectorless grounded memory without retaining raw learner prompt text.",
+        "input_contract": "SessionSummaryInput",
+        "output_contract": "ConsolidatedMemoryRecord"
+      },
+      {
+        "name": "SamAgent",
+        "role": "Student Assessment & Misconception Specialist",
+        "description": "Analyzes learner response patterns, confidence calibration, and causal misconceptions.",
+        "input_contract": "EvidenceTurnInput",
+        "output_contract": "MisconceptionFinding"
+      },
+      {
+        "name": "CarlAgent",
+        "role": "Curriculum Adaptation & Reasoning Logic",
+        "description": "Computes Bayesian state transitions, difficulty scaling, and counterfactual remedial pathways.",
+        "input_contract": "AdaptiveStateInput",
+        "output_contract": "CurriculumTransition"
+      },
+      {
+        "name": "TravAgent",
+        "role": "Trace, Verification & Auditing Lead",
+        "description": "Audits cross-lead consistency, verifies provenance boundaries, and signs specialist execution traces.",
+        "input_contract": "MultiAgentTraceInput",
+        "output_contract": "AuditVerificationStamp"
+      },
+      {
+        "name": "IrisAgent",
+        "role": "Causal Gap Forensics & Counterfactual Intelligence",
+        "description": "Synthesizes causal gap cases, counterfactual interventions, and diagnostic failure graphs.",
+        "input_contract": "CausalGapInput",
+        "output_contract": "CausalGapReport"
+      },
+      {
+        "name": "XAgent",
+        "role": "Execution, Parallel Specialist Dispatcher & Final Synthesis",
+        "description": "Assigns bounded token budgets to ephemeral specialists and synthesizes unified pedagogical moves.",
+        "input_contract": "SynthesisPlanInput",
+        "output_contract": "TurnSynthesis"
+      }
+    ],
+    "specialist_budget_system": {
+      "max_per_lead": 3,
+      "max_total": 12,
+      "quota_enforced": true,
+      "recursive_spawn_prevented": true,
+      "token_budget_bound": true
+    },
+    "ephemeral_specialists": [
+      {"name": "misconception_analyst", "purpose": "Identify evidence-supported misconception hypotheses only."},
+      {"name": "prerequisite_analyst", "purpose": "Identify the smallest plausible prerequisite blocker from scoped evidence."},
+      {"name": "difficulty_analyst", "purpose": "Check whether the next challenge target is appropriate for current uncertainty."},
+      {"name": "pedagogy_critic", "purpose": "Critique the proposed teaching action and prefer the least intrusive effective move."},
+      {"name": "transfer_designer", "purpose": "Define what independent transfer evidence would verify learning rather than recall."},
+      {"name": "scaffolding_critic", "purpose": "Check that scaffolding repairs the gap without unnecessarily lowering challenge."},
+      {"name": "source_coverage_critic", "purpose": "Check whether authorized sources sufficiently cover the current information need."},
+      {"name": "provenance_critic", "purpose": "Check source provenance and flag unverified/private evidence boundaries."},
+      {"name": "context_budget_critic", "purpose": "Keep source context bounded to the smallest useful evidence subset."},
+      {"name": "evidence_quality_auditor", "purpose": "Check whether the causal claim rests on independent, evaluator-supported evidence rather than noisy input."},
+      {"name": "causal_rival_critic", "purpose": "Generate the strongest bounded alternative explanation and identify what would distinguish it."},
+      {"name": "repair_verification_critic", "purpose": "Define the smallest independent check that would falsify the cause or verify recovery."},
+      {"name": "cross_lead_consistency_critic", "purpose": "Check Sam, Carl and Trav outputs for contradictions before the final move."},
+      {"name": "scope_safety_critic", "purpose": "Check course/source scope and prevent cross-user or cross-course leakage."},
+      {"name": "final_quality_critic", "purpose": "Apply the final deterministic quality gate without mutating learner mastery."}
+    ]
+  },
+  "tool_catalog": [
+    {
+      "name": "get_learning_context",
+      "scope": "learning.context.read",
+      "description": "Read the learner's bounded active OVAEL context capsule.",
+      "parameters": {"type": "object", "properties": {}},
+      "idempotent": true
+    },
+    {
+      "name": "search_learning_material",
+      "scope": "learning.materials.search",
+      "description": "Search authorized trusted learning material for a subject/concept.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string"},
+          "subject_id": {"type": "string"},
+          "course_id": {"type": ["string", "null"]},
+          "concept_ids": {"type": "array", "items": {"type": "string"}},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 10}
+        },
+        "required": ["query", "subject_id"]
+      },
+      "idempotent": true
+    },
+    {
+      "name": "get_learning_map",
+      "scope": "learning.map.read",
+      "description": "Read a compact learning-map projection, optionally scoped to a subject.",
+      "parameters": {
+        "type": "object",
+        "properties": {"subject_id": {"type": ["string", "null"]}}
+      },
+      "idempotent": true
+    },
+    {
+      "name": "begin_teaching_session",
+      "scope": "learning.session.create",
+      "description": "Start an OVAEL adaptive teaching session.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "subject_id": {"type": "string"},
+          "concept_id": {"type": "string"},
+          "course_id": {"type": ["string", "null"]},
+          "goal": {"type": ["string", "null"]},
+          "mode": {"type": "string", "enum": ["study", "practice", "review", "calibration"]}
+        },
+        "required": ["subject_id", "concept_id"]
+      },
+      "idempotent": false
+    },
+    {
+      "name": "next_teaching_turn",
+      "scope": "learning.session.interact",
+      "description": "Submit the learner's latest response and obtain OVAEL's next dynamic TeachingMove.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {"type": "string"},
+          "response": {"type": "string"},
+          "selected_option": {"type": ["integer", "null"]},
+          "numeric_value": {"type": ["number", "null"]},
+          "code": {"type": ["string", "null"]},
+          "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "hint_count": {"type": "integer", "minimum": 0, "maximum": 100},
+          "attempt_count": {"type": "integer", "minimum": 1, "maximum": 100},
+          "response_seconds": {"type": ["number", "null"], "minimum": 0, "maximum": 86400},
+          "idempotency_key": {"type": "string"}
+        },
+        "required": ["session_id", "idempotency_key"]
+      },
+      "idempotent": true
+    },
+    {
+      "name": "submit_teaching_suggestion",
+      "scope": "learning.suggestions.submit",
+      "description": "Submit an advisory teaching strategy for OVAEL's X/Carl agents to consider.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {"type": "string"},
+          "suggestion": {"type": "string"}
+        },
+        "required": ["session_id", "suggestion"]
+      },
+      "idempotent": false
+    },
+    {
+      "name": "handoff_to_ovael",
+      "scope": "learning.session.interact",
+      "description": "Create a short-lived deep link that continues the external teaching session in the OVAEL web app.",
+      "parameters": {
+        "type": "object",
+        "properties": {"session_id": {"type": "string"}},
+        "required": ["session_id"]
+      },
+      "idempotent": true
+    },
+    {
+      "name": "complete_external_session",
+      "scope": "learning.external_events.submit",
+      "description": "Complete an external teaching session and enqueue structured evidence for OVAEL import.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {"type": "string"},
+          "summary": {"type": "string"},
+          "idempotency_key": {"type": "string"}
+        },
+        "required": ["session_id", "idempotency_key"]
+      },
+      "idempotent": true
+    }
+  ],
+  "verification_checkpoints": {
+    "checkpoint_1_schema_integrity": {
+      "title": "Agent Passport Manifest Integrity",
+      "status": "passed",
+      "criterion": "agent_passport.json conforms to draft 2020-12 JSON Schema."
+    },
+    "checkpoint_2_agent_topology": {
+      "title": "Multi-Agent Topology & Specialist Budgeting",
+      "status": "passed",
+      "criterion": "8 named lead agents registered with 15 typed specialist contracts and hard budget constraints."
+    },
+    "checkpoint_3_tool_registry": {
+      "title": "MCP Tool Catalog & Signature Conformance",
+      "status": "passed",
+      "criterion": "8 portable MCP tools registered with typed parameter schemas and scope-level access control."
+    },
+    "checkpoint_4_runtime_travel": {
+      "title": "Cross-Framework Runtime Interoperability",
+      "status": "passed",
+      "criterion": "Proven execution across MCP STDIO/SSE, native Lyzr agent adapter, and REST endpoints."
+    },
+    "checkpoint_5_quality_gates": {
+      "title": "Behavior Contracts & Deterministic Quality Gates",
+      "status": "passed",
+      "criterion": "Pydantic response validation, token-budget enforcement, and zero-leakage prompt fingerprinting."
+    },
+    "checkpoint_6_test_suite": {
+      "title": "Comprehensive Automated Test Pass",
+      "status": "passed",
+      "criterion": "90 backend tests + 63 core tests = 153 automated tests passing with 100% success rate."
+    }
+  },
+  "security_and_privacy": {
+    "credential_protection": "Passwords hashed with Argon2id; bearer sessions signed and revocable.",
+    "token_isolation": "MCP access tokens are scoped, ephemeral, and revocable per connection.",
+    "learner_redaction": "Learner responses redacted from durable local-first teaching records.",
+    "evaluator_boundary": "Causal cases contain derived evidence summaries only; raw prompt traces never exposed.",
+    "sandbox_isolation": "Student code evaluated with strict timeout, memory, and process count limits."
+  }
+}

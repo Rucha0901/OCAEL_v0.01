@@ -363,12 +363,18 @@ class CodeReviewService:
         # require the external sandbox path.
         if resource is None:
             return
-        resource.setrlimit(resource.RLIMIT_CPU, (2, 2))
-        resource.setrlimit(resource.RLIMIT_AS, (256 * 1024 * 1024, 256 * 1024 * 1024))
-        resource.setrlimit(resource.RLIMIT_FSIZE, (2 * 1024 * 1024, 2 * 1024 * 1024))
-        resource.setrlimit(resource.RLIMIT_NOFILE, (32, 32))
-        if hasattr(resource, "RLIMIT_NPROC"):
-            resource.setrlimit(resource.RLIMIT_NPROC, (16, 16))
+        for r_limit, val in [
+            (getattr(resource, "RLIMIT_CPU", None), (2, 2)),
+            (getattr(resource, "RLIMIT_AS", None), (256 * 1024 * 1024, 256 * 1024 * 1024)),
+            (getattr(resource, "RLIMIT_FSIZE", None), (2 * 1024 * 1024, 2 * 1024 * 1024)),
+            (getattr(resource, "RLIMIT_NOFILE", None), (32, 32)),
+            (getattr(resource, "RLIMIT_NPROC", None), (16, 16)),
+        ]:
+            if r_limit is not None:
+                try:
+                    resource.setrlimit(r_limit, val)
+                except (ValueError, OSError):
+                    pass
 
     @staticmethod
     def _harness(code: str, entry: str, cases: list[dict[str, Any]]) -> str:

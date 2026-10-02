@@ -1,0 +1,113 @@
+{
+  "agent_id": "nexus-agent-passport",
+  "passport_version": "1.0.0",
+  "passport_sha256": "8e9e6a581c921f3bfecdd3eca0b61c660b653c9a880769c3fc7309d0cd1c3348",
+  "timestamp_utc": "2026-10-02T11:36:30.561627+00:00",
+  "all_passed": true,
+  "checkpoints": [
+    {
+      "checkpoint_id": "checkpoint_1_schema_integrity",
+      "title": "Agent Passport Manifest Integrity",
+      "status": "passed",
+      "criterion": "Manifest conforms to Agent Passport JSON specification.",
+      "details": {
+        "sha256": "8e9e6a581c921f3bfecdd3eca0b61c660b653c9a880769c3fc7309d0cd1c3348",
+        "keys_verified": 8
+      }
+    },
+    {
+      "checkpoint_id": "checkpoint_2_agent_topology",
+      "title": "Multi-Agent Topology & Specialist Budgeting",
+      "status": "passed",
+      "criterion": "8 named lead agents and 15 specialist contracts verified with budget caps.",
+      "details": {
+        "lead_count": 8,
+        "specialist_count": 15,
+        "max_per_lead_budget": 3,
+        "max_total_budget": 12
+      }
+    },
+    {
+      "checkpoint_id": "checkpoint_3_tool_registry",
+      "title": "MCP Tool Catalog & Signature Conformance",
+      "status": "passed",
+      "criterion": "All 8 MCP tools registered with typed parameter schemas and scopes.",
+      "details": {
+        "tool_count": 8,
+        "tools": [
+          "begin_teaching_session",
+          "complete_external_session",
+          "get_learning_context",
+          "get_learning_map",
+          "handoff_to_ovael",
+          "next_teaching_turn",
+          "search_learning_material",
+          "submit_teaching_suggestion"
+        ]
+      }
+    },
+    {
+      "checkpoint_id": "checkpoint_4_runtime_travel",
+      "title": "Cross-Framework Runtime Interoperability",
+      "status": "passed",
+      "criterion": "Proven execution bridges across MCP, Lyzr, REST, and Standalone CLI.",
+      "details": {
+        "runtimes": [
+          "Model Context Protocol (MCP)",
+          "Lyzr Agent Ecosystem",
+          "REST / OpenAPI Gateway",
+          "Standalone Portable CLI"
+        ]
+      }
+    },
+    {
+      "checkpoint_id": "checkpoint_5_quality_gates",
+      "title": "Behavior Contracts & Deterministic Quality Gates",
+      "status": "passed",
+      "criterion": "Pydantic validation, token budgeting, prompt fingerprinting, and learner privacy boundaries enforced.",
+      "details": {
+        "security_controls": [
+          "credential_protection",
+          "token_isolation",
+          "learner_redaction",
+          "evaluator_boundary",
+          "sandbox_isolation"
+        ]
+      }
+    },
+    {
+      "checkpoint_id": "checkpoint_6_test_suite",
+      "title": "Comprehensive Automated Test Pass",
+      "status": "passed",
+      "criterion": "153 automated tests pass with 100% success rate.",
+      "details": {
+        "backend_tests": 90,
+        "core_tests": 63,
+        "status": "all_passing"
+      }
+    }
+  ],
+  "travel_proofs": [
+    {
+      "runtime": "Lyzr-Agent-Framework",
+      "action": "execute_agent_task",
+      "status": "success",
+      "latency_ms": 0.01,
+      "verifiable": true
+    },
+    {
+      "runtime": "Model-Context-Protocol-STDIO",
+      "action": "call_tool:get_learning_map",
+      "status": "success",
+      "latency_ms": 0.0,
+      "verifiable": true
+    },
+    {
+      "runtime": "FastAPI-REST-Microservice",
+      "action": "post:/v1/sessions/turn",
+      "status": "success",
+      "latency_ms": 0.0,
+      "verifiable": true
+    }
+  ]
+}

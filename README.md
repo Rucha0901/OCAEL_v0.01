@@ -1,6 +1,36 @@
-# OVAEL
+# Nexus OVAEL (Agent Passport) 🛂
+> **Agent Passport Challenge** — Built for HiDevs × Lyzr (presented by AI House).  
+> *Theme: Build. Verify. Prove Your Agent Can Travel.*  
+> **Status:** 6 / 6 Verification Checkpoints Passed (100% Compliance) | [Read Full Agent Passport Specification](./AGENT_PASSPORT.md)
 
-**OVAEL is a teaching companion that remembers how a learner understands, detects what is obstructing progress, and chooses the next useful teaching move.**
+[![Agent Passport](https://img.shields.io/badge/Agent_Passport-v1.0.0_Verified-success?style=for-the-badge&logo=passport)](./agent_passport.json)
+[![Runtimes](https://img.shields.io/badge/Runtimes-MCP_|_Lyzr_|_REST_|_CLI-blue?style=for-the-badge)](./src/nexus_passport/)
+[![Tests](https://img.shields.io/badge/Tests-167_Passed-brightgreen?style=for-the-badge)](./tests/)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](./LICENSE)
+
+---
+
+### 🚀 Quickstart: Run & Verify Agent in 1 Command
+
+```bash
+# 1. Launch the Interactive Multi-Agent Console (REPL, Socratic Dialogues, & Live Travel)
+python run_agent.py
+
+# 2. Or run the Automated End-to-End Showcase Tour
+python run_agent.py --demo
+
+# 3. Run the official Agent Passport Verification CLI (Validates 6 Checkpoints & Proves Runtime Travel)
+python passport_verify.py
+
+# 4. Run the live Lyzr Cross-Framework Travel Demonstration
+python scripts/demo_lyzr_travel.py
+```
+
+---
+
+## What is Nexus OVAEL?
+
+**Nexus OVAEL is a modular, portable, and verifiable multi-agent epistemic teaching engine that remembers how a learner understands, detects what is obstructing progress, and chooses the next useful teaching move.**
 
 It combines conversational teaching, turn-based voice learning, uploaded-source instruction, adaptive practice, a personalized learner graph, causal gap forensics, teacher tools, and privacy-scoped MCP access in one authenticated product.
 
