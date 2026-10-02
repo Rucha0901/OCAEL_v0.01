@@ -1,0 +1,12 @@
+# Explainability & Model Governance
+
+This document describes how Nexus OVAEL reasons, evaluates evidence, and enforces epistemic boundaries without requiring examination of the underlying codebase.
+
+## Decision Making Architecture and How It Decides Reasoning Pathways
+Nexus OVAEL decides its pedagogical actions through an 8-lead multi-agent consensus loop governed by Bayesian Knowledge Tracing (BKT) and causal gap forensics. The lead NavigatorAgent evaluates the learner's current mastery probability across the concept graph and determines whether the optimal next step is an exploratory probe, a worked example, or a counterfactual challenge. Before any decision is finalized, the XAgent dispatches ephemeral critic specialists to verify that cognitive load is optimal and that prerequisite concepts are satisfied. This dual-loop reasoning process ensures that every instructional move is grounded in verified cognitive evidence rather than unconstrained model generation.
+
+## Inputs, Data Sources, and Contextual Data Used
+The agent ingests structured learner responses, response latency metrics, and self-reported confidence calibration levels as primary input streams. In addition to direct student dialogue, Nexus incorporates authorized curriculum documents, textbook excerpts, and concept dependency graphs as external grounding data sources. All raw input text is processed locally and redacted through Argon2id session hashing and vectorless memory compaction before reaching diagnostic sub-agents. By strictly isolating user session data from durable persistent stores, the system prevents cross-session prompt leakage while maintaining accurate mastery histories.
+
+## Limitations, Operational Constraints, and Known Issues
+A primary constraint of Nexus OVAEL is that it operates strictly within authorized subject concept graphs and will abstain from pedagogical intervention when diagnostic evidence quality falls below confidence thresholds. The agent enforces a hard token-budget quota of at most three ephemeral specialists per lead agent and a maximum of twelve total specialists per learning turn to avoid runaway computation. Furthermore, a known issue in local-first execution environments is that advanced multimodal OCR analysis requires external tool availability, falling back to plaintext parsing when vision services are unconfigured. The system is intentionally designed not to provide direct answers during diagnostic evaluation turns, preserving epistemic integrity even when users request solutions directly.
